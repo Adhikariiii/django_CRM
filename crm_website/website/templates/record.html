@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {{record.id}}
+{{record.created_at}}
+
+<div class="card text-center">
+  <div class="card-header">
+    <h2 class="card-title">{{record.first_name}} {{record.last_name}}</h2>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{{record.city}}</h2>
+    <p class="card-text">{{record.address}}</p>
+    <p class="card-text">{{record.email}}</p>
+    <p class="card-text">{{record.phone}}</p>
+    <p class="card-text">{{record.state}}</p>
+    <p class="card-text">{{record.zip_code}}</p>
+  </div>
+</div>
+<button type="button" class="btn btn-success">
+  <a href="{%url 'home' %} " style="color: rgb(0, 0, 0); text-decoration: none"
+    >Back</a
+  >
+</button>
+<button type="button" class="btn btn-danger">
+  <a
+    href="{%url 'delete_record' record.id %} "
+    style="color: rgb(0, 0, 0); text-decoration: none"
+    >Delete</a
+  >
+</button>
+
+{% endblock %}
